@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+.container{
+    margin: 160px auto;
+    max-width: 700px;
+    width: 100%;
+    background: none;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.container header{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.container .todolist{
+    position: relative;
+    max-width: 600px;
+    overflow-y: auto;
+}
+
+.todolist li{
+    position: relative;
+    list-style: none;
+    margin-bottom: 20px;
+    background-color: #fad9d9;
+    border-radius: 30px;
+    padding: 15px 20px;
+    cursor: default;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+.todolist li span {
+    float: right;
+    position: relative;
+    top: -2px;
+}
+/* untuk mengubah bentuk checkbox */
+.container input[type="checkbox"] {
+    position: relative;
+    min-height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+.container input[type="checkbox"]::after {
+    font-size: 1.7em;
+    text-align: center;
+    line-height: 30px;
+    color: #0f061b;
+    position: absolute;
+    margin: auto;
+    left: 0; right: 0; bottom: 0; top: 0;
+    display: block;
+    border-radius: 50%;
+    background-color: #fad9d9;
+    transition: all 0.3s ease-out;
+}
+
+.container input[type="checkbox"]::before{
+    position: absolute;
+    margin: auto;
+    left: 0; right: 0; bottom: 0; top: 0;
+    display: block;
+    height: 80px;
+    width: 80px;
+    border: 2px dotted ;
+    border-radius: 50%;
+    transition: all 0.3s ease-in;
+}
+.container input[type="checkbox"]:hover:before{
+    height: 60px;
+    width: 60px;
+}
+
+.container input[type="checkbox"]:checked:before{
+    height: 100%;
+    width: 100%;
+    background: #1f0707;
+    border: #8e49e8;
+    border-radius: 50%;
+}
+.container .checkbox1::after{ content: '1';}
+.container .checkbox2::after{ content: '2';}
+.container input[type="checkbox"]:focus{ outline: none;}
+.container input[type="checkbox"]:checked:after { content: '✓';}
+
+.todolist li label {
+    display: inline-block;
+    padding-left: 10px;
+  }
+
+.inputField{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    margin: 20px 0;
+    height: 45px;
+    max-width: 90%;
+    width: 100%;
+    justify-content: center;
+       
+    }
+
+.inputField input{
+    width: 50%;
+    height: 100%;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    padding-left: 15px;
+    transition: all 0.3s ease;
+    
+}
+
+.inputField input:focus{
+    border-color: 8e49e8;
+}
+.inputField button{
+    width: 50px;
+    height: 100%;
+    border: none;
+    color: #ffffff60;
+    margin-left: 5px;
+    font-size: 21px;
+    outline: none;
+    background: #8e49e8;
+    cursor: pointer;
+    border-radius: 3px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.inputField button:hover{
+    background: #fad9d9;
+}
+.inputField button.active{
+    opacity: 1;
+    pointer-events: auto;
+}
